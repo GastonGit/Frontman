@@ -7,11 +7,7 @@ class App extends React.Component<unknown, unknown> {
     }
 
     render(): JSX.Element {
-        return (
-            <div className="app">
-                <header className="app__header"></header>
-            </div>
-        );
+        return <div className="app"></div>;
     }
 }
 
