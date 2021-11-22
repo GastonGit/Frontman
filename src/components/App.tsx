@@ -5,7 +5,9 @@ import ServerLogin from './ServerLogin';
 function App(): JSX.Element {
     return (
         <div className="app">
-            <ServerLogin />
+            <div className="app__content">
+                <ServerLogin />
+            </div>
         </div>
     );
 }

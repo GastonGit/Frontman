@@ -5,6 +5,7 @@ import {
     updateCurrentServer,
     updateFixedServer,
 } from '../features/server/server-slice';
+import { Grid } from '@mui/material';
 
 function ServerLogin(): JSX.Element {
     const dispatch = useAppDispatch();
@@ -21,21 +22,31 @@ function ServerLogin(): JSX.Element {
     }
 
     return (
-        <div className="server__block">
-            <p>Current Server: {fixedServer}</p>
-            <form onSubmit={handleServerDispatch}>
-                <label>
-                    Name:
-                    <input
-                        id="serverInput"
-                        type="text"
-                        value={currentServer}
-                        onChange={handleServerChange}
-                    />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
-        </div>
+        <Grid
+            container
+            className="server__block"
+            direction="column"
+            justifyContent="center"
+            alignItems="flex-start"
+        >
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <p>Current Server: {fixedServer}</p>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                <form onSubmit={handleServerDispatch}>
+                    <label>
+                        Address:
+                        <input
+                            id="serverInput"
+                            type="text"
+                            value={currentServer}
+                            onChange={handleServerChange}
+                        />
+                    </label>
+                    <input type="submit" value="Submit" />
+                </form>
+            </Grid>
+        </Grid>
     );
 }
 

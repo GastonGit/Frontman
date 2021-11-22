@@ -1,0 +1,6 @@
+.server__block {
+    color: var(--main-text-color);
+
+    word-wrap: normal;
+    word-break: break-all;
+}
