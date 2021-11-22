@@ -1,22 +1,27 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface ServerState {
-    value: string;
+    currentValue: string;
+    fixedValue: string;
 }
 
 const initialState: ServerState = {
-    value: '',
+    currentValue: '',
+    fixedValue: '',
 };
 
 const serverSlice = createSlice({
     name: 'server',
     initialState,
     reducers: {
-        setServer(state, action: PayloadAction<string>) {
-            state.value = action.payload;
+        updateCurrentServer(state, action: PayloadAction<string>) {
+            state.currentValue = action.payload;
+        },
+        updateFixedServer(state, action: PayloadAction<string>) {
+            state.fixedValue = action.payload;
         },
     },
 });
 
-export const { setServer } = serverSlice.actions;
+export const { updateCurrentServer, updateFixedServer } = serverSlice.actions;
 export default serverSlice.reducer;
