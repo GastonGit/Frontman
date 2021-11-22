@@ -1,7 +1,6 @@
 import React, { ChangeEvent, FormEvent } from 'react';
 import '../styles/App.css';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
-import { toggle, setBoolean } from '../features/switch/switch-slice';
 import {
     updateCurrentServer,
     updateFixedServer,
@@ -9,17 +8,8 @@ import {
 
 function App(): JSX.Element {
     const dispatch = useAppDispatch();
-    const switching = useAppSelector((state) => state.switch.value);
     const fixedServer = useAppSelector((state) => state.server.fixedValue);
     const currentServer = useAppSelector((state) => state.server.currentValue);
-
-    function handleToggleClick() {
-        dispatch(toggle());
-    }
-
-    function handleSetClick() {
-        dispatch(setBoolean(true));
-    }
 
     function handleServerDispatch(event: FormEvent<HTMLFormElement>) {
         dispatch(updateFixedServer(currentServer));
@@ -32,14 +22,6 @@ function App(): JSX.Element {
 
     return (
         <div className="app">
-            <button onClick={handleToggleClick}>
-                switch is: {switching.toString()}
-            </button>
-
-            <button onClick={handleSetClick}>
-                switch is: {switching.toString()}
-            </button>
-
             <p>Current Server: {fixedServer}</p>
             <form onSubmit={handleServerDispatch}>
                 <label>
