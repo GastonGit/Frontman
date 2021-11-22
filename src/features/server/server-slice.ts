@@ -19,6 +19,7 @@ const serverSlice = createSlice({
         },
         updateFixedServer(state, action: PayloadAction<string>) {
             state.fixedValue = action.payload;
+            state.currentValue = '';
         },
     },
 });
