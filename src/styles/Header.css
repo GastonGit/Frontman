@@ -1,4 +1,7 @@
 .header {
+    background-color: var(--secondary-bg-color);
+    color: var(--main-title-color);
+
     height: 60px;
     width: 100%;
 
@@ -8,11 +11,8 @@
 }
 
 .header__content {
-    background-color: var(--secondary-bg-color);
-    color: var(--main-title-color);
-
     height: 100%;
-    width: 100%;
+    width: 98%;
 
     display: flex;
     align-items: center;
