@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Header.css';
-import { AppBar, Box, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Link, Toolbar } from '@mui/material';
 import ServerLogin from './ServerLogin';
 
 export default class Header extends React.Component<unknown, unknown> {
@@ -9,7 +9,9 @@ export default class Header extends React.Component<unknown, unknown> {
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static">
                     <Toolbar variant="dense">
-                        <Typography variant="h6">Frontman</Typography>
+                        <Link href="/" variant="h6" className="title__link">
+                            Frontman
+                        </Link>
                         <Box sx={{ ml: 2 }}>
                             <ServerLogin />
                         </Box>
