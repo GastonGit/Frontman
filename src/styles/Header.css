@@ -1,3 +1,7 @@
+.header__bar {
+    background-color: var(--secondary-bg-color);
+}
+
 .title__link:link {
     color: var(--main-title-color);
     text-decoration: none;

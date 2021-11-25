@@ -8,7 +8,7 @@ export default class Header extends React.Component<unknown, unknown> {
         return (
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static">
-                    <Toolbar variant="dense">
+                    <Toolbar variant="dense" className="header__bar">
                         <Link href="/" variant="h6" className="title__link">
                             Frontman
                         </Link>
