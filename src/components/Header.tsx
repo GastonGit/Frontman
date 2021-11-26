@@ -12,7 +12,12 @@ export default class Header extends React.Component<unknown, unknown> {
                         <Link href="/" variant="h6" className="title__link">
                             Frontman
                         </Link>
-                        <Box sx={{ ml: 2 }}>
+                        <Box
+                            sx={{
+                                flexGrow: 1,
+                                ml: 2,
+                            }}
+                        >
                             <ServerLogin />
                         </Box>
                     </Toolbar>

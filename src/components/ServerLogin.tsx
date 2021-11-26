@@ -5,7 +5,7 @@ import {
     updateCurrentServer,
     updateFixedServer,
 } from '../features/server/server-slice';
-import { Grid } from '@mui/material';
+import { Button, FormControl, Grid, TextField } from '@mui/material';
 
 function ServerLogin(): JSX.Element {
     const dispatch = useAppDispatch();
@@ -25,26 +25,38 @@ function ServerLogin(): JSX.Element {
         <Grid
             container
             className="server__block"
-            direction="column"
+            direction="row"
             justifyContent="center"
             alignItems="flex-start"
         >
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                <p>Current Server: {fixedServer}</p>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+            <Grid item xs={12} sm={8} md={10}>
                 <form onSubmit={handleServerDispatch}>
-                    <label>
-                        Address:
-                        <input
-                            id="serverInput"
-                            type="text"
+                    <FormControl
+                        sx={{
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            justifyContent: 'flex-start',
+                        }}
+                    >
+                        <TextField
+                            label="Server"
+                            variant="filled"
                             value={currentServer}
                             onChange={handleServerChange}
+                            size="small"
                         />
-                    </label>
-                    <input type="submit" value="Submit" />
+                        <Button
+                            type="submit"
+                            value="Submit"
+                            variant="contained"
+                        >
+                            Submit
+                        </Button>
+                    </FormControl>
                 </form>
+            </Grid>
+            <Grid item xs={12} sm={4} md={2}>
+                <p>Current Server: {fixedServer}</p>
             </Grid>
         </Grid>
     );
