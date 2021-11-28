@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Header.css';
 import { AppBar, Box, Link, Toolbar } from '@mui/material';
 import ServerLogin from './ServerLogin';
+import ServerStatus from './ServerStatus';
 
 export default class Header extends React.Component<unknown, unknown> {
     render(): JSX.Element {
@@ -12,14 +13,8 @@ export default class Header extends React.Component<unknown, unknown> {
                         <Link href="/" variant="h6" className="title__link">
                             Frontman
                         </Link>
-                        <Box
-                            sx={{
-                                flexGrow: 1,
-                                ml: 2,
-                            }}
-                        >
-                            <ServerLogin />
-                        </Box>
+                        <ServerLogin />
+                        <ServerStatus />
                     </Toolbar>
                 </AppBar>
             </Box>

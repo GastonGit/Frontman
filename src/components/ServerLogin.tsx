@@ -5,8 +5,7 @@ import {
     updateCurrentServer,
     updateFixedServer,
 } from '../features/server/server-slice';
-import { FormControl, Grid, TextField } from '@mui/material';
-import ServerStatus from './ServerStatus';
+import { FormControl, TextField } from '@mui/material';
 
 function ServerLogin(): JSX.Element {
     const dispatch = useAppDispatch();
@@ -22,36 +21,23 @@ function ServerLogin(): JSX.Element {
     }
 
     return (
-        <Grid
-            container
-            className="server__block"
-            direction="row"
-            justifyContent="center"
-            alignItems="flex-start"
-        >
-            <Grid item xs={12} sm={8} md={10}>
-                <form onSubmit={handleServerDispatch}>
-                    <FormControl
-                        sx={{
-                            flexDirection: 'row',
-                            alignItems: 'center',
-                            justifyContent: 'flex-start',
-                        }}
-                    >
-                        <TextField
-                            label="Server"
-                            variant="outlined"
-                            value={currentServer}
-                            onChange={handleServerChange}
-                            size="small"
-                        />
-                    </FormControl>
-                </form>
-            </Grid>
-            <Grid item xs={12} sm={4} md={2}>
-                <ServerStatus />
-            </Grid>
-        </Grid>
+        <form onSubmit={handleServerDispatch}>
+            <FormControl
+                sx={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    justifyContent: 'flex-start',
+                }}
+            >
+                <TextField
+                    label="Server"
+                    variant="outlined"
+                    value={currentServer}
+                    onChange={handleServerChange}
+                    size="small"
+                />
+            </FormControl>
+        </form>
     );
 }
 
