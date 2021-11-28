@@ -40,7 +40,7 @@ function ServerLogin(): JSX.Element {
                     >
                         <TextField
                             label="Server"
-                            variant="filled"
+                            variant="outlined"
                             value={currentServer}
                             onChange={handleServerChange}
                             size="small"
