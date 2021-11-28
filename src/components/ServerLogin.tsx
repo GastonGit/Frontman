@@ -5,7 +5,7 @@ import {
     updateCurrentServer,
     updateFixedServer,
 } from '../features/server/server-slice';
-import { Button, FormControl, Grid, TextField } from '@mui/material';
+import { FormControl, Grid, TextField } from '@mui/material';
 
 function ServerLogin(): JSX.Element {
     const dispatch = useAppDispatch();
@@ -45,13 +45,6 @@ function ServerLogin(): JSX.Element {
                             onChange={handleServerChange}
                             size="small"
                         />
-                        <Button
-                            type="submit"
-                            value="Submit"
-                            variant="contained"
-                        >
-                            Submit
-                        </Button>
                     </FormControl>
                 </form>
             </Grid>
