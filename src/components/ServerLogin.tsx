@@ -6,10 +6,10 @@ import {
     updateFixedServer,
 } from '../features/server/server-slice';
 import { FormControl, Grid, TextField } from '@mui/material';
+import ServerStatus from './ServerStatus';
 
 function ServerLogin(): JSX.Element {
     const dispatch = useAppDispatch();
-    const fixedServer = useAppSelector((state) => state.server.fixedValue);
     const currentServer = useAppSelector((state) => state.server.currentValue);
 
     function handleServerDispatch(event: FormEvent<HTMLFormElement>) {
@@ -49,7 +49,7 @@ function ServerLogin(): JSX.Element {
                 </form>
             </Grid>
             <Grid item xs={12} sm={4} md={2}>
-                <p>Current Server: {fixedServer}</p>
+                <ServerStatus />
             </Grid>
         </Grid>
     );
