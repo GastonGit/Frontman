@@ -9,12 +9,29 @@ export default class Header extends React.Component<unknown, unknown> {
         return (
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static">
-                    <Toolbar variant="dense" className="header__bar">
-                        <Link href="/" variant="h6" className="title__link">
+                    <Toolbar
+                        variant="dense"
+                        className="header__bar"
+                        sx={{ py: { xs: 1, md: 0.5 } }}
+                    >
+                        <Link
+                            href="/"
+                            variant="h6"
+                            className="title__link"
+                            sx={{ mr: 2 }}
+                        >
                             Frontman
                         </Link>
-                        <ServerLogin />
-                        <ServerStatus />
+                        <Box
+                            sx={{
+                                flexGrow: 1,
+                                alignItems: 'center',
+                                display: { xs: 'block', md: 'flex' },
+                            }}
+                        >
+                            <ServerLogin />
+                            <ServerStatus />
+                        </Box>
                     </Toolbar>
                 </AppBar>
             </Box>
