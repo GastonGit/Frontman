@@ -3,11 +3,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 export interface ServerState {
     currentValue: string;
     fixedValue: string;
+    connected: boolean;
 }
 
 const initialState: ServerState = {
     currentValue: '',
     fixedValue: '',
+    connected: false,
 };
 
 const serverSlice = createSlice({
@@ -20,6 +22,7 @@ const serverSlice = createSlice({
         updateFixedServer(state, action: PayloadAction<string>) {
             state.fixedValue = action.payload;
             state.currentValue = '';
+            state.connected = true;
         },
     },
 });
