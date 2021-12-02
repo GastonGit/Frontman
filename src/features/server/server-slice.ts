@@ -22,7 +22,11 @@ const serverSlice = createSlice({
         updateFixedServer(state, action: PayloadAction<string>) {
             state.fixedValue = action.payload;
             state.currentValue = '';
-            state.connected = true;
+            if (action.payload.match(/^[0-9a-zA-Z]{1,16}$/)) {
+                if (action.payload === 'test') {
+                    state.connected = true;
+                }
+            }
         },
     },
 });
