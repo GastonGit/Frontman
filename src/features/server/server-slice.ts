@@ -8,7 +8,7 @@ export interface ServerState {
 
 const initialState: ServerState = {
     currentValue: '',
-    fixedValue: '',
+    fixedValue: 'Frontman',
     connected: false,
 };
 

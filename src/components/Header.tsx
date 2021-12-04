@@ -2,9 +2,11 @@ import React from 'react';
 import '../styles/Header.css';
 import { AppBar, Box, Link, Toolbar } from '@mui/material';
 import ServerLogin from './ServerLogin';
-import ServerStatus from './ServerStatus';
+import { useAppSelector } from '../app/hooks';
 
 export default function Header(): JSX.Element {
+    const fixedServer = useAppSelector((state) => state.server.fixedValue);
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -19,7 +21,7 @@ export default function Header(): JSX.Element {
                         className="title__link"
                         sx={{ mr: 2 }}
                     >
-                        Frontman
+                        {fixedServer}
                     </Link>
                     <Box
                         sx={{
@@ -29,7 +31,6 @@ export default function Header(): JSX.Element {
                         }}
                     >
                         <ServerLogin />
-                        <ServerStatus />
                     </Box>
                 </Toolbar>
             </AppBar>
